@@ -48,16 +48,19 @@ Siga os passos abaixo para rodar o projeto localmente.
 
    ```bash
    git clone https://github.com/Mario-Coxe/VOLTAA_BACKEND.git
+   ```
+   
+   ```bash
    cd VOLTAA_BACKEND
    ```
 
-2. Instale as dependências:
+1. Instale as dependências:
 
    ```bash
    npm install
    ```
 
-3. Configure as variáveis de ambiente:
+2. Configure as variáveis de ambiente:
 
    Crie um arquivo `.env` com base no `.env.example`:
 
@@ -65,15 +68,15 @@ Siga os passos abaixo para rodar o projeto localmente.
    cp .env.example .env
    ```
 
-4. Configure o banco de dados no `.env` com suas credenciais do MySQL.
+3. Configure o banco de dados no `.env` com suas credenciais do MySQL.
 
-5. Execute as migrations:
+4. Execute as migrations:
 
    ```bash
    node ace migration:run
    ```
 
-6. Inicie o servidor:
+5. Inicie o servidor:
 
    ```bash
    node ace serve --watch
