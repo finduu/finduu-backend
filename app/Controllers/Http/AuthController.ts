@@ -19,8 +19,7 @@ export default class AuthController {
     } catch (error) {
       if (error.code === 'E_VALIDATION_FAILURE') {
         return response.status(400).send({
-          message: 'Erro de validação. Por favor, verifique os dados enviados.',
-          errors: error.messages,
+          message: error.messages.errors[0].message,
         })
       }
       console.error('Erro ao registrar usuário:', error)
