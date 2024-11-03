@@ -1,5 +1,4 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
-
 export default class AddDisappearanceDateToMissingPersons extends BaseSchema {
   protected tableName = 'users'
 

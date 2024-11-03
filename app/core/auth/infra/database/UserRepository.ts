@@ -1,4 +1,4 @@
-import User from 'App/Models/User'
+import User from './models/User'
 import UserEntity from '../../domain/entities/UserEntity'
 import { IUserRepository } from '../../domain/repositories/IUserRepository'
 
