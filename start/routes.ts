@@ -1,5 +1,13 @@
 import Route from '@ioc:Adonis/Core/Route'
+import authRoutes from '../app/core/auth/routes/authRoutes'
 
+authRoutes()
+
+Route.get('/', async () => {
+  return { hello: 'VOLTA PARA CASA' }
+})
+
+/*
 Route.group(() => {
   //users
   Route.group(() => {
@@ -22,14 +30,12 @@ Route.group(() => {
     //Route.get('/search', 'MunicipesController.search')
   }).prefix('municipes')
 
-
   //locations
   Route.group(() => {
     Route.post('/', 'LocationsController.store').middleware('auth')
     Route.get('/', 'LocationsController.index')
     Route.get('/:id', 'LocationsController.show')
   }).prefix('locations')
-
 
   //missing people
   Route.group(() => {
@@ -50,6 +56,4 @@ Route.group(() => {
   Route.post('/register', 'AuthController.register')
 }).prefix('auth')
 
-Route.get('/', async () => {
-  return { hello: 'VOLTA PARA CASA' }
-})
+*/

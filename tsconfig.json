@@ -23,7 +23,8 @@
       ],
       "Database/*": [
         "./database/*"
-      ]
+      ],
+      "@auth/*": ["src/core/auth/*"]
     },
     "types": [
       "@adonisjs/core",

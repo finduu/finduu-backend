@@ -1,7 +1,8 @@
-import AuthService from 'App/core/Auth/service/AuthService'
+/*
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import UsersRegisterValidator from 'App/Validators/UsersRegisterValidator'
 import User from 'App/Models/User'
+import AuthService from 'App/core/Auth/service/AuthService';
 
 export default class AuthController {
   public async login({ request, response, auth }: HttpContextContract) {
@@ -27,6 +28,7 @@ export default class AuthController {
       return response.ok({ message: 'Usuário Registrado', user })
     } catch (error) {
       if (error.code === 'E_VALIDATION_FAILURE') {
+        console.log(error.messages.errors[0].message)
         return response.status(400).send({
           message: error.messages.errors[0].message,
         })
@@ -39,3 +41,5 @@ export default class AuthController {
     }
   }
 }
+
+*/

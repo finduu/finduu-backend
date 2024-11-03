@@ -14,10 +14,10 @@ export default class User extends BaseModel {
   public phone_number: string
 
   @column()
-  public municipeId: number
+  public municipe_id: number
 
   @belongsTo(() => Municipe, {
-    foreignKey: 'municipeId',
+    foreignKey: 'municipe_id',
     localKey: 'id'
   })
   public municipe: BelongsTo<typeof Municipe>
