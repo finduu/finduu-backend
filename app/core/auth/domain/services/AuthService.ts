@@ -2,6 +2,8 @@ import { IUserRepository } from '../repositories/IUserRepository'
 import UserEntity from '../entities/UserEntity'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import UserRepository from '../../infra/repositories/UserRepository'
+import Env from '@ioc:Adonis/Core/Env'
+
 export default class AuthService {
   private auth
   private userRepository: IUserRepository
@@ -21,11 +23,11 @@ export default class AuthService {
   }
 
   public async login(email: string, password: string): Promise<{ token: string; user } | null> {
-    console.log(email, password)
-
     try {
+      const expiresIn = Env.get('TOKEN_EXPIRES_IN')
+
       const token = await this.auth.use('api').attempt(email, password, {
-        expiresIn: '7 days',
+        expiresIn,
       })
 
       const userRepository = new UserRepository()
@@ -33,7 +35,7 @@ export default class AuthService {
 
       return { token: token.toJSON().token, user }
     } catch (error) {
-      console.error('Erro ao tentar autenticar:', error)
+      console.error('Error when trying to authenticate:', error)
       return null
     }
   }
