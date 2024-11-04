@@ -9,10 +9,11 @@ export default class RegisterUserUseCase {
     fullName: string,
     phoneNumber: string,
     password: string,
-    municipeId: number
+    municipeId: number,
+    email: string
   ) {
     try {
-      const userEntity = new UserEntity(fullName, phoneNumber, password, municipeId)
+      const userEntity = new UserEntity(fullName, phoneNumber, password, municipeId, email)
       return await this.authService.register(userEntity)
     } catch (error) {
       console.error('Error during user registration:', error)

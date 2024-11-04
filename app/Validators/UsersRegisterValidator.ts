@@ -15,6 +15,15 @@ export default class UsersRegisterValidator {
         caseInsensitive: true,
       }),
     ]),
+    email: schema.string({}, [
+      rules.required(),
+      rules.email(),
+      rules.unique({
+        table: 'users',
+        column: 'email',
+        caseInsensitive: true,
+      }),
+    ]),
     password: schema.string({}, [
       rules.required(),
       rules.minLength(6),
@@ -36,6 +45,9 @@ export default class UsersRegisterValidator {
     'phone_number.required': 'O número de telefone é obrigatório.',
     'phone_number.mobile': 'O número de telefone deve ser um número de telefone válido.',
     'phone_number.unique': 'Já existe um usuário com este número.',
+    'email.required': 'O email é obrigatório.',
+    'email.email': 'O email deve ser um endereço de email válido.',
+    'email.unique': 'Já existe um usuário com este email.',
     'password.required': 'A senha é obrigatória.',
     'password.minLength': 'A senha deve ter no mínimo 6 caracteres.',
     'password.maxLength': 'A senha deve ter no máximo 20 caracteres.',

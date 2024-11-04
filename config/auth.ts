@@ -1,5 +1,4 @@
 import type { AuthConfig } from '@ioc:Adonis/Addons/Auth'
-
 const authConfig: AuthConfig = {
   guard: 'api',
   guards: {
@@ -14,8 +13,8 @@ const authConfig: AuthConfig = {
       provider: {
         driver: 'lucid',
         identifierKey: 'id',
-        uids: ['password', 'phone_number'],
-        model: () => import('App/Models/User'),
+        uids: ['password', 'email'],
+        model: () => import('App/core/auth/infra/database/models/User'),
       },
     },
   },

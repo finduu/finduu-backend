@@ -3,6 +3,7 @@ export default class UserEntity {
     public fullName: string,
     public phoneNumber: string,
     public password: string,
-    public municipeId: number
+    public municipeId: number,
+    public email: string
   ) {}
 }

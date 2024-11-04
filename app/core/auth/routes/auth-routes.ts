@@ -4,6 +4,7 @@ import AuthController from '../infra/http/controllers/AuthController'
 export default function authRoutes() {
   const authController = new AuthController()
   Route.group(() => {
+    Route.post('/login', authController.login.bind(authController))
     Route.post('/register', authController.register.bind(authController))
   }).prefix('/auth')
 }

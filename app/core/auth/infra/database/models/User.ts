@@ -13,14 +13,16 @@ export default class User extends BaseModel {
   public phone_number: string
 
   @column()
+  public email: string
+
+  @column()
   public municipe_id: number
 
   @belongsTo(() => Municipe, {
     foreignKey: 'municipe_id',
-    localKey: 'id'
+    localKey: 'id',
   })
   public municipe: BelongsTo<typeof Municipe>
-
 
   @column({ serializeAs: null })
   public password: string

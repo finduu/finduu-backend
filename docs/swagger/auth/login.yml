@@ -4,9 +4,9 @@ info:
   version: 1.0.0
   description: Auth
 paths:
-  /auth/register:
+  /auth/login:
     post:
-      summary: Registra um novo usuário
+      summary: Realiza o login do usuário
       tags:
         - Auth
       requestBody:
@@ -16,18 +16,13 @@ paths:
             schema:
               type: object
               properties:
-                full_name:
+                email:
                   type: string
-                  example: Mário Coxe
-                phone_number:
-                  type: string
-                  example: 945047525
+                  example: "example@gmail.com"
+                  description: Email
                 password:
                   type: string
                   example: 12345678
-                municipe_id:
-                  type: string
-                  example: 1
       responses:
         200:
-          description: Usuário registrado com sucesso
+          description: Login efetuado com sucesso

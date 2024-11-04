@@ -1,5 +1,5 @@
 import Route from '@ioc:Adonis/Core/Route'
-import authRoutes from '../app/core/auth/routes/authRoutes'
+import authRoutes from '../app/core/auth/routes/auth-routes'
 
 authRoutes()
 

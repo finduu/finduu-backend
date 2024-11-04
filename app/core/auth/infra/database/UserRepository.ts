@@ -10,9 +10,10 @@ export default class UserRepository implements IUserRepository {
         phone_number: userEntity.phoneNumber,
         password: userEntity.password,
         municipe_id: userEntity.municipeId,
+        email: userEntity.email
       })
 
-      return new UserEntity(user.full_name, user.phone_number, user.password, user.municipe_id)
+      return new UserEntity(user.full_name, user.phone_number, user.password, user.municipe_id, user.email)
     } catch (error) {
       console.error('Error while creating user in UserRepository:', error)
       throw error 
