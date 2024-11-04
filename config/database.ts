@@ -1,11 +1,16 @@
 import Env from '@ioc:Adonis/Core/Env'
-import { resolve, sep } from 'path'
+import { resolve } from 'path'
 import type { DatabaseConfig } from '@ioc:Adonis/Lucid/Database'
 import { loadDirectories } from 'App/loadMigrations'
 
 function loadMigrationDirectories(baseDir: string): string[] {
   const allDirectories = loadDirectories(baseDir)
   return allDirectories.filter((dir) => dir.includes('migrations'))
+}
+
+function loadSeederDirectories(baseDir: string): string[] {
+  const allDirectories = loadDirectories(baseDir)
+  return allDirectories.filter((dir) => dir.includes('seeders'))
 }
 
 const baseDir = resolve(__dirname, '../app/core')
@@ -15,15 +20,13 @@ const migrationDirectories = [
   resolve(__dirname, './database/migrations'),
 ]
 
-//console.log('Diretórios de migrations:', migrationDirectories)
-
-const modularSeeders = loadDirectories(baseDir)
-  .filter((path) => path.includes(`db${sep}`) && path.includes('seeders'))
-  .map((k) => resolve(baseDir, k.split(`${baseDir}${sep}`)[1]))
+const seederDirectories = [
+  ...loadSeederDirectories(baseDir),
+  resolve(__dirname, './database/seeders'),
+]
 
 const databaseConfig: DatabaseConfig = {
   connection: Env.get('DB_CONNECTION'),
-
   connections: {
     mysql: {
       client: 'mysql',
@@ -39,7 +42,7 @@ const databaseConfig: DatabaseConfig = {
         paths: migrationDirectories,
       },
       seeders: {
-        paths: [...modularSeeders, resolve(__dirname, './database/seeders')],
+        paths: seederDirectories,
       },
       healthCheck: false,
       debug: false,
