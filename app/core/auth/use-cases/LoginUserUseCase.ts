@@ -2,7 +2,7 @@ import { IAuthService } from '../domain/ports/IAuthService'
 import { IUserRepository } from '../domain/repositories/IUserRepository'
 import AuthService from '../domain/services/AuthService'
 import User from '../infra/database/models/User'
-import UserRepository from '../infra/database/UserRepository'
+import UserRepository from '../infra/repositories/UserRepository'
 
 interface LoginInput {
   email: string
@@ -21,10 +21,8 @@ export class LoginUseCase {
   public async execute({ email, password }: LoginInput): Promise<{ token: string } | null> {
     const authResult = await this.authService.login(email, password)
     if (!authResult) {
-      console.log(authResult)
       throw new Error('Invalid credentials')
     }
-
     return authResult
   }
 }

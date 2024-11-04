@@ -1,7 +1,7 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import RegisterUserUseCase from 'App/core/auth/use-cases/RegisterUserUseCase'
 import AuthService from 'App/core/auth/domain/services/AuthService'
-import UserRepository from '../../database/UserRepository'
+import UserRepository from '../../repositories/UserRepository'
 import UsersRegisterValidator from 'App/Validators/UsersRegisterValidator'
 import { LoginUseCase } from 'App/core/auth/use-cases/LoginUserUseCase'
 export default class AuthController {
@@ -14,7 +14,7 @@ export default class AuthController {
 
   public async register({ request, response }: HttpContextContract) {
     try {
-      const { full_name, phone_number, password, municipe_id, email} =
+      const { full_name, phone_number, password, municipe_id, email } =
         await request.validate(UsersRegisterValidator)
       const user = await this.registerUserUseCase.execute(
         full_name,
