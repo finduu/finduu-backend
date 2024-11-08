@@ -1,50 +1,57 @@
-# VOLTAA
+
+---
+
+# Finduu
 
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Contributors Welcome](https://img.shields.io/badge/contributors-welcome-brightgreen)](CONTRIBUTING.md)
 
-## 📝 Sobre o Projeto
+## About the Project
 
-**VOLTAA** é uma aplicação desenvolvida com AdonisJS v5 que ajuda a localizar pessoas desaparecidas. A plataforma permite que usuários registrem casos, sigam investigações, façam comentários e recebam atualizações.
+**Finduu** is an application developed with AdonisJS v5 to help locate missing persons. The platform allows users to register cases, follow investigations, comment, and receive updates.
 
-### Funcionalidades
+### Features
 
-- 🧑‍🤝‍🧑 **Registro de Usuários**: Criação de conta para participar da plataforma.
-- 🔐 **Login**: Acesso à plataforma para gerenciar e acompanhar casos.
-- 📃 **Listagem de Pessoas Desaparecidas**: Visualização de todos os casos registrados.
-- 📝 **Registrar Pessoas Desaparecidas**: Permite que os usuários criem um novo registro de pessoa desaparecida.
-- 👁️ **Seguir Casos**: Usuários podem observar e seguir casos de interesse para receber notificações.
-- 💬 **Comentar em Casos**: Participação ativa com comentários em casos de pessoas desaparecidas.
+- **User Registration**: Create an account to participate in the platform.
+- **Login**: Access the platform to manage and track cases.
+- **Missing Persons Listing**: View all registered cases.
+- **Register Missing Persons**: Allows users to create a new missing person record.
+- **Follow Cases**: Users can follow cases of interest to receive notifications.
+- **Comment on Cases**: Actively participate by commenting on missing person cases.
+- **Social Media Sharing**: Share cases on social media to reach a wider audience.
 
-## 🚀 Tecnologias
+## Technologies
 
-Este projeto é construído utilizando as seguintes tecnologias:
+This project is built using the following technologies:
 
 - [AdonisJS v5](https://adonisjs.com/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Swagger](https://swagger.io/) (para documentação de API)
-- [MySQL](https://www.mysql.com/) (banco de dados)
+- [Swagger](https://swagger.io/) (for API documentation)
+- [MySQL](https://www.mysql.com/) (database)
 
-## 📄 Documentação da API
 
-Toda a API está documentada com o **Swagger**. Para acessar a documentação e testar os endpoints:
+These links are automatically configured for each post, making it easy to share on any platform.
 
-1. Execute o projeto localmente (veja a seção de instalação abaixo).
-2. Acesse: `http://localhost:3333/docs` para ver e interagir com a API.
+##  API Documentation
 
-## 🛠️ Instalação
+The entire API is documented with **Swagger**. To access the documentation and test the endpoints:
 
-Siga os passos abaixo para rodar o projeto localmente.
+1. Run the project locally (see the installation section below).
+2. Go to `http://localhost:3333/docs` to view and interact with the API.
 
-### Pré-requisitos
+## 🛠 Installation
 
-- Node.js (>= 14.x)
+Follow the steps below to run the project locally.
+
+### Prerequisites
+
+- Node.js (>= 18.x)
 - PostgreSQL
 - AdonisJS CLI
 
-### Passos
+### Steps
 
-1. Clone o repositório:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/Mario-Coxe/VOLTAA_BACKEND.git
@@ -54,58 +61,58 @@ Siga os passos abaixo para rodar o projeto localmente.
    cd VOLTAA_BACKEND
    ```
 
-1. Instale as dependências:
+1. Install the dependencies:
 
    ```bash
    npm install
    ```
 
-2. Configure as variáveis de ambiente:
+2. Configure environment variables:
 
-   Crie um arquivo `.env` com base no `.env.example`:
+   Create an `.env` file based on `.env.example`:
 
    ```bash
    cp .env.example .env
    ```
 
-3. Configure o banco de dados no `.env` com suas credenciais do MySQL.
+3. Set up the database in `.env` with your MySQL credentials.
 
-4. Execute as migrations:
+4. Run the migrations:
 
    ```bash
    node ace migration:run
    ```
 
-5. Inicie o servidor:
+5. Start the server:
 
    ```bash
    node ace serve --watch
    ```
 
-Agora, a aplicação estará rodando em `http://localhost:3333`.
+The application will now be running at `http://localhost:3333`.
 
-## 💡 Como Contribuir
+##  How to Contribute
 
-Contribuições são super bem-vindas! Siga os passos abaixo para colaborar:
+Contributions are highly welcome! Follow the steps below to get involved:
 
-1. Faça um fork do projeto.
-2. Crie uma nova branch com a sua feature ou correção: `git checkout -b minha-feature`.
-3. Faça commit das suas mudanças: `git commit -m 'Adicionando nova feature'`.
-4. Envie para o branch principal: `git push origin minha-feature`.
-5. Crie um **Pull Request** explicando a sua mudança.
+1. Fork the project.
+2. Create a new branch with your feature or fix: `git checkout -b my-feature`.
+3. Commit your changes: `git commit -m 'Adding new feature'`.
+4. Push to the main branch: `git push origin my-feature`.
+5. Open a **Pull Request** explaining your change.
 
-### Guia de Contribuição
+### Contribution Guide
 
-Veja mais detalhes no [CONTRIBUTING.md](CONTRIBUTING.md).
+See more details in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## 🛡️ Licença
+## 🛡️ License
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## 📞 Contato
+## 📞 Contact
 
-Se tiver alguma dúvida ou sugestão, sinta-se à vontade para abrir uma **Issue** ou entrar em contato:
+If you have any questions or suggestions, feel free to open an **Issue** or contact:
 
 - Email: [mariocoxedev@gmail.com](mailto:mariocoxedev@gmail.com)
----
 
+---
